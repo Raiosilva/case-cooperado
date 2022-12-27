@@ -1,0 +1,26 @@
+<section>
+
+</section>
+
+<section class="container" style="padding-left: 2rem;">
+    <h3>Informe o CPF do futuro cooperado (a)</h3>
+    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt inventore impedit eum ipsa ab dolorem illo
+        incidunt dolorum!</h4>
+
+    <form [formGroup]="searchCustomerByCpf" (ngSubmit)="onSubmit()">
+        <label for="cpf" style="display: block;">CPF </label>
+        <input appCpfValidator class="form-control" type="text" name="cpf" mask="000.000.000-00" placeholder="CPF"
+            formControlName="cpf" style="height: 2rem; margin-right: 1rem; width: 15rem;">
+
+        <button color="btn btn-primary" type="submit" [disabled]="!searchCustomerByCpf.valid"
+            style="height: 2rem; width: 9rem; background: #195C7A; color: #FFFF;">
+            Consultar por CPF</button>
+        <div style="color: red; padding-top: 0.5rem;" *ngIf="
+                searchCustomerByCpf.controls['cpf']?.invalid
+                && (searchCustomerByCpf.controls['cpf']?.dirty
+                || searchCustomerByCpf.controls['cpf']?.touched)">
+
+            CPF inválido! Tente outra vez!
+        </div>
+    </form>
+</section>

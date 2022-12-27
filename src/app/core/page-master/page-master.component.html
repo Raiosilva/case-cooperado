@@ -6,25 +6,31 @@
         </div>
 
         <div class="secondy-section">
-            <img [src]="'./../../assets/logo.svg'" alt="User Logo" class="logo">
-            <button class="btn btn-rounded">VIACREDI</button>
-            <img [src]="'./../../assets/logo.svg'" alt="User Logo" class="logo">
+            <a href="">
+                <i class="fa fa-bell-o fa-2x" aria-hidden="true"></i>
+            </a>
+            <button class="btn btn-rounded" style="background: #FFFF;border: 1px solid #195C7A;">VIACREDI</button>
+            <a href="">
+                <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+            </a>
         </div>
     </nav>
-    <main>Main</main>
+    <main>
+        <ng-content></ng-content>
+    </main>
     <div id="sidebar">
         <div class="menus">
-            <img [src]="'./../../assets/logo.svg'" alt="User Logo" class="logo">
+            <img [src]="'./../../assets/logo.svg'" alt="User Logo" class="logo-brand" style="width: 4rem;">
 
             <a class="icon" (click)="showMenu()">
-                <i class="fa fa-bars"></i>
+                <i class="fa fa-bars fa-2x" style="color: #5996B3;"></i>
             </a>
 
-            <span>Search</span>
-            <span>Stars</span>
-            <span>Message</span>
-            <span>Config</span>
-            <span>Home</span>
+            <a class="icon"><i class="fa fa-search fa-2x" style="color: white;" aria-hidden="true"></i></a>
+            <a class="icon"><i class="fa fa-star-o fa-2x" style="color: white;" aria-hidden="true"></i></a>
+            <a class="icon"><i class="fa fa-commenting-o fa-2x" style="color: white;" aria-hidden="true"></i></a>
+            <a class="icon"><i class="fa fa-tasks fa-2x" style="color: white;" aria-hidden="true"></i></a>
+            <a class="icon"><i class="fa fa-university fa-2x" style="color: white;" aria-hidden="true"></i></a>
         </div>
     </div>
     <footer>

@@ -11,7 +11,7 @@
     gap: .2rem  ;
     
     nav {
-        background: #a7ffeb;
+        background: #FFFFFF;
         grid-area: nav;
         display: flex;
         padding: .7rem;
@@ -40,15 +40,15 @@
     }
 
     main {
-        background: #84ffff;
+        background: #E7ECF2;
         grid-area: main;
-        height: 86vh;
+        height: 83.6vh;
     }
 
     #sidebar {
-        background: #18ffff;
+        background: #195C7A;
         grid-area: sidebar;
-        width: 20vh;
+        // width: 20vh;
         height: 100vh;
 
         .logo {
@@ -69,13 +69,14 @@
     }
 
     footer {
-        background: #1de9b6;
+        background: #FFFFFF;
         grid-area: footer;
         height: 6vh;
         padding: 0.7rem 1.2rem;
 
         button {
-            border: 1px solid blue;
+            background: #FFFFFF;
+            border: 1px solid #195C7A;
             padding: 0.6rem 1rem;
             border-radius: 5px;
         }
