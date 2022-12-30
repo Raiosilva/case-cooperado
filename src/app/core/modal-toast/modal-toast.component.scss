@@ -1,0 +1,16 @@
+:host {
+    width: 20rem;
+    position: absolute;
+    top: 8%;
+    right: 0;
+    transform: translate(-6%, -0%);
+}
+  
+i {
+    position: relative;
+    left: calc(100% - 1.5rem);
+    top: 1.5rem;
+    color: #FFFF;
+    cursor: pointer;
+}
+  

@@ -11,19 +11,12 @@ import { CpfValidator } from './validators';
   }]
 })
 export class CpfValidatorDirective extends CpfValidator implements Validator {
-  @Input() ngModel!: string;
+  	@Input() ngModel!: string;
 	@Output() ngModelChange = new EventEmitter();
-  ngOnChanges(changes: SimpleChanges) {
-		// if (changes.ngModel && changes.ngModel.currentValue && this.ngModel != this.lastValue) {
-		// 	const event = {target: {value: changes.ngModel.currentValue}};
-			// this.onInput(event);
-		// }
+  	
+	ngOnChanges(changes: SimpleChanges) {}
 
-    console.log('changes: ', changes);
-    
-	}
-
-  @HostListener( 'input', ['$event'] )
+	@HostListener( 'input', ['$event'] )
 	onInput( $event: any ) {
 		let value = $event.target.value;
 		if (value) {

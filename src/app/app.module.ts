@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,10 +21,14 @@ const maskConfig: Partial<IConfig> = {
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    CommonModule,
     BrowserAnimationsModule,
-    NgxMaskModule.forRoot(maskConfig),
+    NgxMaskModule.forRoot(maskConfig)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }

@@ -1,26 +1,84 @@
-<section>
-
+<section class="pl-ad">
+    <div class="aling">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+    </div>
 </section>
 
-<section class="container" style="padding-left: 2rem;">
+<section class="container">
     <h3>Informe o CPF do futuro cooperado (a)</h3>
     <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt inventore impedit eum ipsa ab dolorem illo
         incidunt dolorum!</h4>
 
-    <form [formGroup]="searchCustomerByCpf" (ngSubmit)="onSubmit()">
-        <label for="cpf" style="display: block;">CPF </label>
-        <input appCpfValidator class="form-control" type="text" name="cpf" mask="000.000.000-00" placeholder="CPF"
-            formControlName="cpf" style="height: 2rem; margin-right: 1rem; width: 15rem;">
+    <form [formGroup]="searchCustomerByCpf">
+        <label class="block" for="cpf">CPF</label>
+        <input #searchBy class="form-control" type="text" name="cpf" mask="000.000.000-00" placeholder="CPF"
+            formControlName="cpf">
 
-        <button color="btn btn-primary" type="submit" [disabled]="!searchCustomerByCpf.valid"
-            style="height: 2rem; width: 9rem; background: #195C7A; color: #FFFF;">
+        <button #btn class="btn btn-primary" type="button"
+            [ngClass]="!searchCustomerByCpf.valid ? 'btn-custom-disable' : 'btn-custom-active'"
+            [disabled]="!searchCustomerByCpf.valid" (click)="onSubmit()">
             Consultar por CPF</button>
-        <div style="color: red; padding-top: 0.5rem;" *ngIf="
+
+        <div class="error" *ngIf="
                 searchCustomerByCpf.controls['cpf']?.invalid
                 && (searchCustomerByCpf.controls['cpf']?.dirty
                 || searchCustomerByCpf.controls['cpf']?.touched)">
 
-            CPF inválido! Tente outra vez!
+            Invalid CPF! Tente outra vez!
         </div>
     </form>
+
+    <div class="transition" *ngIf="customer$ | async as customer">
+        <section class="card-main">
+            <div class="card-header">
+                <label class="label-primary">{{ customer.label }}</label>
+                <label class="label-secondary">{{ customer.localeConsultation
+                    }}</label>
+            </div>
+            <div class="card-body">
+                <div class="card-body-primary">
+                    <i class="fa fa-user fa-2x aling-icon" aria-hidden="true"></i>
+                    <div class="">
+                        <label class="label-secondary">Nome</label>
+                        <h5>{{ customer.name }}</h5>
+                    </div>
+                </div>
+                <div class="card-body-secondary">
+                    <i class="fa fa-check-circle-o fa-2x icon-btn" aria-hidden="true"></i>
+                    <div class="">
+                        <label class="label-secondary">Situação do CPF</label>
+                        <h5>{{ customer.situationCPF }}</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section *ngFor="let account of customer['account']" class="card-main lf">
+            <div class="card-header">
+                <label class="label-primary">{{
+                    account.labelAccount }}</label>
+                <label class="label-secondary">{{
+                    account.localeConsultation }}</label>
+            </div>
+            <div class="card-body">
+                <div class="card-body-primary">
+                    <i class="fa fa-credit-card fa-2x icon-btn-pd" aria-hidden="true"></i>
+                    <div class="">
+                        <label class="label-secondary">{{
+                            account.labelNumber }}</label>
+                        <h5>{{ account.numberAccount }}</h5>
+                    </div>
+                </div>
+                <div class="card-body-secondary">
+                    <a href="#" class="align-btn">Duplicar Conta</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <ng-container *ngIf="loading">
+        <app-search-load [searchText]="'Search customer'"></app-search-load>
+    </ng-container>
+    <ng-container #container></ng-container>
 </section>

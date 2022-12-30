@@ -1,0 +1,137 @@
+.pl-ad {
+    padding-left: 2rem;
+
+    .aling {
+        text-align: center;
+        margin-top: 40px;
+
+        .step {
+            height: 20px;
+            width: 20px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;  
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+          
+        .step.active {
+            opacity: 1;
+        }
+          
+        /* Mark the steps that are finished and valid: */
+        .step.finish {
+            background-color: #04AA6D;
+        }
+    }
+}
+
+.container {
+    padding-left: 1rem;
+    .block {
+        display: block;
+    }
+
+    input {
+        height: 2rem;
+        margin-right: 1rem;
+        width: 21rem;
+    }
+
+    .error {
+        color: red;
+        padding-top: 0.5rem;
+    }
+
+    .transition {
+        display: flex;
+
+        .card-main {
+            border: 1px solid white;
+            background: #FFFF;
+            width: 21rem;
+            display: grid;
+            padding: 1.5rem;
+            margin-top: 3rem;
+
+            .card-header {
+                display: grid;
+
+                .label-primary {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                }
+
+                .label-secondary {
+                    font-weight: 600;
+                    color: #6C706F;
+                }
+            }
+        }
+
+        .lf {
+            margin-left: 2rem;
+        }
+
+        .card-body {
+            .card-body-primary {
+                padding-top: 2rem;
+                display: flex;
+
+                .aling-icon {
+                    padding-right: 1.5rem;
+                    color: #818588;
+                }
+
+                .icon-btn-pd {
+                    padding-right: 1.5rem;
+                }
+            }
+            .card-body-secondary {
+                padding-top: 1rem;
+                display: flex;
+
+                .icon-btn {
+                    padding-right: 1.5rem;
+                    color: #62B18A;
+                }
+            }
+            .align-btn {
+                text-decoration: none;
+                color: #195C7A;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+.btn-custom-disable {
+    height: 2rem;
+    width: 9rem;
+    color: #FFFF;
+    background: #A3BDCC;
+    border: none;
+}
+
+.btn-custom-active {
+    height: 2rem;
+    width: 9rem;
+    color: #FFFF;
+    background: #195C7A;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-reset {
+    height: 2rem;
+    width: 9rem;
+    color: #FFFF;
+    background: #195C7A;
+    border: none;
+    margin-left: 0.6rem;
+    border-radius: 6%;
+    width: 3rem;
+    cursor: pointer;
+}
